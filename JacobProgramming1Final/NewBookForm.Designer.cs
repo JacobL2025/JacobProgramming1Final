@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtBookGenre = new TextBox();
+            txtBookAuthor = new TextBox();
+            txtBookName = new TextBox();
             label1 = new Label();
-            txtBookId = new Label();
-            txtBookName = new Label();
-            txtBookAuthor = new Label();
+            lblBookGenre = new Label();
+            lblBookName = new Label();
+            lblBookAuthor = new Label();
             btnSave = new Button();
             btnClear = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtBookGenre
             // 
-            textBox1.Location = new Point(205, 52);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(534, 39);
-            textBox1.TabIndex = 0;
+            txtBookGenre.Location = new Point(205, 52);
+            txtBookGenre.Name = "txtBookGenre";
+            txtBookGenre.Size = new Size(534, 39);
+            txtBookGenre.TabIndex = 0;
             // 
-            // textBox2
+            // txtBookAuthor
             // 
-            textBox2.Location = new Point(205, 168);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(534, 39);
-            textBox2.TabIndex = 1;
+            txtBookAuthor.Location = new Point(205, 168);
+            txtBookAuthor.Name = "txtBookAuthor";
+            txtBookAuthor.Size = new Size(534, 39);
+            txtBookAuthor.TabIndex = 1;
             // 
-            // textBox3
+            // txtBookName
             // 
-            textBox3.Location = new Point(205, 112);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(534, 39);
-            textBox3.TabIndex = 2;
+            txtBookName.Location = new Point(205, 112);
+            txtBookName.Name = "txtBookName";
+            txtBookName.Size = new Size(534, 39);
+            txtBookName.TabIndex = 2;
             // 
             // label1
             // 
@@ -69,32 +69,32 @@
             label1.TabIndex = 3;
             label1.Text = "Add an Awesome Book!";
             // 
-            // txtBookId
+            // lblBookGenre
             // 
-            txtBookId.AutoSize = true;
-            txtBookId.Location = new Point(12, 59);
-            txtBookId.Name = "txtBookId";
-            txtBookId.Size = new Size(140, 32);
-            txtBookId.TabIndex = 4;
-            txtBookId.Text = "📕 Book Id:";
+            lblBookGenre.AutoSize = true;
+            lblBookGenre.Location = new Point(12, 59);
+            lblBookGenre.Name = "lblBookGenre";
+            lblBookGenre.Size = new Size(184, 32);
+            lblBookGenre.TabIndex = 4;
+            lblBookGenre.Text = "⚔️ Book Genre:";
             // 
-            // txtBookName
+            // lblBookName
             // 
-            txtBookName.AutoSize = true;
-            txtBookName.Location = new Point(12, 115);
-            txtBookName.Name = "txtBookName";
-            txtBookName.Size = new Size(184, 32);
-            txtBookName.TabIndex = 5;
-            txtBookName.Text = "📖 Book Name:";
+            lblBookName.AutoSize = true;
+            lblBookName.Location = new Point(12, 115);
+            lblBookName.Name = "lblBookName";
+            lblBookName.Size = new Size(184, 32);
+            lblBookName.TabIndex = 5;
+            lblBookName.Text = "📖 Book Name:";
             // 
-            // txtBookAuthor
+            // lblBookAuthor
             // 
-            txtBookAuthor.AutoSize = true;
-            txtBookAuthor.Location = new Point(12, 171);
-            txtBookAuthor.Name = "txtBookAuthor";
-            txtBookAuthor.Size = new Size(193, 32);
-            txtBookAuthor.TabIndex = 6;
-            txtBookAuthor.Text = "✍️ Book Author:";
+            lblBookAuthor.AutoSize = true;
+            lblBookAuthor.Location = new Point(12, 171);
+            lblBookAuthor.Name = "lblBookAuthor";
+            lblBookAuthor.Size = new Size(193, 32);
+            lblBookAuthor.TabIndex = 6;
+            lblBookAuthor.Text = "✍️ Book Author:";
             // 
             // btnSave
             // 
@@ -104,6 +104,7 @@
             btnSave.TabIndex = 7;
             btnSave.Text = "✅ Save Book";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnClear
             // 
@@ -122,13 +123,13 @@
             ClientSize = new Size(751, 277);
             Controls.Add(btnClear);
             Controls.Add(btnSave);
-            Controls.Add(txtBookAuthor);
-            Controls.Add(txtBookName);
-            Controls.Add(txtBookId);
+            Controls.Add(lblBookAuthor);
+            Controls.Add(lblBookName);
+            Controls.Add(lblBookGenre);
             Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtBookName);
+            Controls.Add(txtBookAuthor);
+            Controls.Add(txtBookGenre);
             ForeColor = SystemColors.Highlight;
             Name = "NewBookForm";
             Text = "📖 New Book Form";
@@ -138,13 +139,13 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtBookGenre;
+        private TextBox txtBookAuthor;
+        private TextBox txtBookName;
         private Label label1;
-        private Label txtBookId;
-        private Label txtBookName;
-        private Label txtBookAuthor;
+        private Label lblBookGenre;
+        private Label lblBookName;
+        private Label lblBookAuthor;
         private Button btnSave;
         private Button btnClear;
     }

@@ -33,6 +33,33 @@ namespace JacobProgramming1Final
 
             _bookshelf.Add(book);
         }
+
+
+        public void SaveBooksToFile()
+        {
+            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "JacobsLibrary.csv");
+
+            try
+            {
+                bool fileExists = File.Exists(filepath);
+
+                using (StreamWriter writer = new StreamWriter(filepath, true))
+                {
+                    writer.WriteLine("BookGenre,BookName,BookAuthor");
+                    foreach (var BookShelf in _bookshelf)
+                    {
+                        writer.WriteLine($"{BookShelf.BookGenre},{BookShelf.BookTitle},{BookShelf.BookAuthor}");
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry, We Couldn't Save Your Favorite Book!");
+            }
+        }
+
     }
 
 
