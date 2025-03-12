@@ -10,12 +10,12 @@ namespace JacobProgramming1Final
     {
         public int BookId { get; set; }
         public string BookGenre { get; set; }
-        public string BookTitle { get; set; }
+        public string BookName { get; set; }
         public string BookAuthor { get; set; }
 
         public override string ToString()
         {
-            return $"{BookId} - {BookGenre} - {BookTitle} - {BookAuthor}";
+            return $"{BookId} - {BookGenre} - {BookName} - {BookAuthor}";
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace JacobProgramming1Final
 {
@@ -20,13 +21,14 @@ namespace JacobProgramming1Final
         {
             InitializeComponent();
             _mainForm = form;
-            BookCount++;
+            
 
 
         }
 
         private void AddBook()
         {
+            MessageBox.Show("AddBook method called!");
             if (CheckContents(txtBookGenre))
             {
                 MessageBox.Show("Please Provide a Book Genre!");
@@ -36,18 +38,20 @@ namespace JacobProgramming1Final
             if (CheckContents(txtBookName))
             {
                 MessageBox.Show("Please Provide a Book Name!");
+                return;
             }
 
             if (CheckContents(txtBookAuthor))
             {
                 MessageBox.Show("Please Provide an Author Name!");
+                return;
             }
 
             Bookshelf book = new Bookshelf
             {
                 BookId = BookCount,
                 BookGenre = txtBookGenre.Text,
-                BookTitle = txtBookName.Text,
+                BookName = txtBookName.Text,
                 BookAuthor = txtBookAuthor.Text,
 
             };
@@ -70,7 +74,7 @@ namespace JacobProgramming1Final
                     }
 
 
-                    writer.WriteLine($"{book.BookGenre},{book.BookTitle},{book.BookAuthor}"); 
+                    writer.WriteLine($"{book.BookGenre},{book.BookName},{book.BookAuthor}"); 
                 }
 
 

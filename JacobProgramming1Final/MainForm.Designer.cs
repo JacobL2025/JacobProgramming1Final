@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             dgvLibrary = new DataGridView();
-            BookId = new DataGridViewTextBoxColumn();
-            BookGenre = new DataGridViewTextBoxColumn();
-            BookName = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
             btnAddBook = new Button();
             label1 = new Label();
             btnToast = new Button();
+            BookId = new DataGridViewTextBoxColumn();
+            BookGenre = new DataGridViewTextBoxColumn();
+            BookName = new DataGridViewTextBoxColumn();
+            BookAuthor = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvLibrary).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             dgvLibrary.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvLibrary.BackgroundColor = SystemColors.Info;
             dgvLibrary.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLibrary.Columns.AddRange(new DataGridViewColumn[] { BookId, BookGenre, BookName, Column1 });
+            dgvLibrary.Columns.AddRange(new DataGridViewColumn[] { BookId, BookGenre, BookName, BookAuthor });
             dgvLibrary.GridColor = Color.FromArgb(255, 128, 0);
             dgvLibrary.Location = new Point(12, 82);
             dgvLibrary.Name = "dgvLibrary";
@@ -52,34 +52,6 @@
             dgvLibrary.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLibrary.Size = new Size(909, 628);
             dgvLibrary.TabIndex = 0;
-            // 
-            // BookId
-            // 
-            BookId.HeaderText = "BookId";
-            BookId.MinimumWidth = 10;
-            BookId.Name = "BookId";
-            BookId.Width = 200;
-            // 
-            // BookGenre
-            // 
-            BookGenre.HeaderText = "BookGenre";
-            BookGenre.MinimumWidth = 10;
-            BookGenre.Name = "BookGenre";
-            BookGenre.Width = 200;
-            // 
-            // BookName
-            // 
-            BookName.HeaderText = "BookName";
-            BookName.MinimumWidth = 10;
-            BookName.Name = "BookName";
-            BookName.Width = 200;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "BookAuthor";
-            Column1.MinimumWidth = 10;
-            Column1.Name = "Column1";
-            Column1.Width = 200;
             // 
             // btnAddBook
             // 
@@ -116,6 +88,38 @@
             btnToast.UseVisualStyleBackColor = false;
             btnToast.Click += btnToast_Click;
             // 
+            // BookId
+            // 
+            BookId.DataPropertyName = "BookId";
+            BookId.HeaderText = "BookId";
+            BookId.MinimumWidth = 10;
+            BookId.Name = "BookId";
+            BookId.Width = 200;
+            // 
+            // BookGenre
+            // 
+            BookGenre.DataPropertyName = "BookGenre";
+            BookGenre.HeaderText = "BookGenre";
+            BookGenre.MinimumWidth = 10;
+            BookGenre.Name = "BookGenre";
+            BookGenre.Width = 200;
+            // 
+            // BookName
+            // 
+            BookName.DataPropertyName = "BookName";
+            BookName.HeaderText = "BookName";
+            BookName.MinimumWidth = 10;
+            BookName.Name = "BookName";
+            BookName.Width = 200;
+            // 
+            // BookAuthor
+            // 
+            BookAuthor.DataPropertyName = "BookAuthor";
+            BookAuthor.HeaderText = "BookAuthor";
+            BookAuthor.MinimumWidth = 10;
+            BookAuthor.Name = "BookAuthor";
+            BookAuthor.Width = 200;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -142,6 +146,6 @@
         private DataGridViewTextBoxColumn BookId;
         private DataGridViewTextBoxColumn BookGenre;
         private DataGridViewTextBoxColumn BookName;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn BookAuthor;
     }
 }

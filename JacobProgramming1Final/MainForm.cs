@@ -24,6 +24,9 @@ namespace JacobProgramming1Final
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
+            
+            
+            
             _newBook.ShowDialog();
         }
 
@@ -32,6 +35,10 @@ namespace JacobProgramming1Final
             book.BookId = _bookshelf.Count + 1;
 
             _bookshelf.Add(book);
+
+            SaveBooksToFile();
+
+            ReloadDataGridView();
         }
 
 
@@ -48,7 +55,7 @@ namespace JacobProgramming1Final
                     writer.WriteLine("BookGenre,BookName,BookAuthor");
                     foreach (var BookShelf in _bookshelf)
                     {
-                        writer.WriteLine($"{BookShelf.BookGenre},{BookShelf.BookTitle},{BookShelf.BookAuthor}");
+                        writer.WriteLine($"{BookShelf.BookGenre},{BookShelf.BookName},{BookShelf.BookAuthor}");
                     }
 
                 }
@@ -59,11 +66,18 @@ namespace JacobProgramming1Final
                 MessageBox.Show("Sorry, We Couldn't Save Your Favorite Book!");
             }
         }
+        private void ReloadDataGridView()
+        {
+            dgvLibrary.DataSource = null;
+            dgvLibrary.DataSource = _bookshelf;
+
+        }
 
     }
-
-
 }
+
+
+    
 
 
 
