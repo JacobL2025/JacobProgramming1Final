@@ -21,14 +21,13 @@ namespace JacobProgramming1Final
         {
             InitializeComponent();
             _mainForm = form;
-            
+
 
 
         }
 
         private void AddBook()
         {
-            MessageBox.Show("AddBook method called!");
             if (CheckContents(txtBookGenre))
             {
                 MessageBox.Show("Please Provide a Book Genre!");
@@ -60,21 +59,21 @@ namespace JacobProgramming1Final
             string bookTitle = txtBookName.Text;
             string bookAuthor = txtBookAuthor.Text;
 
-            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "JacobsLibrary.csv"); 
+            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "JacobsLibrary.csv");
 
             try
             {
-                bool fileExists = File.Exists(filepath); 
+                bool fileExists = File.Exists(filepath);
 
                 using (StreamWriter writer = new StreamWriter(filepath, true))
                 {
-                    if (!fileExists) 
+                    if (!fileExists)
                     {
-                        writer.WriteLine("BookGenre,BookName,BookAuthor"); 
+                        writer.WriteLine("BookGenre,BookName,BookAuthor");
                     }
 
 
-                    writer.WriteLine($"{book.BookGenre},{book.BookName},{book.BookAuthor}"); 
+                    writer.WriteLine($"{book.BookGenre},{book.BookName},{book.BookAuthor}");
                 }
 
 
@@ -83,21 +82,28 @@ namespace JacobProgramming1Final
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sorry, We Couldn't Save Your Book!");  
+                MessageBox.Show("Sorry, We Couldn't Save Your Book!");
             }
 
         }
-
-        
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             AddBook();
+            Hide();
         }
-
         private bool CheckContents(Control control)
         {
             return control.Text == ""; // this is going to validate the content within the text boxes
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearNewBookForm();
+        }
+        private void ClearNewBookForm()
+        {
+            txtBookGenre.Text = "";
+            txtBookName.Text = "";
+            txtBookAuthor.Text = "";
         }
     }
 

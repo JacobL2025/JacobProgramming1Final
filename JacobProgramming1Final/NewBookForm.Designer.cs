@@ -51,14 +51,14 @@
             txtBookAuthor.Location = new Point(205, 168);
             txtBookAuthor.Name = "txtBookAuthor";
             txtBookAuthor.Size = new Size(534, 39);
-            txtBookAuthor.TabIndex = 1;
+            txtBookAuthor.TabIndex = 2;
             // 
             // txtBookName
             // 
             txtBookName.Location = new Point(205, 112);
             txtBookName.Name = "txtBookName";
             txtBookName.Size = new Size(534, 39);
-            txtBookName.TabIndex = 2;
+            txtBookName.TabIndex = 1;
             // 
             // label1
             // 
@@ -101,7 +101,7 @@
             btnSave.Location = new Point(610, 219);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(129, 46);
-            btnSave.TabIndex = 7;
+            btnSave.TabIndex = 3;
             btnSave.Text = "✅ Save Book";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
@@ -111,9 +111,10 @@
             btnClear.Location = new Point(20, 219);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(119, 46);
-            btnClear.TabIndex = 8;
+            btnClear.TabIndex = 4;
             btnClear.Text = "\U0001f9f9 Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // NewBookForm
             // 
